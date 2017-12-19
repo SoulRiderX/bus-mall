@@ -2,7 +2,7 @@
 // better pattern
 
 
-lk;
+
 BusMall.allBusMalls = [];
 
 function BusMall(name, filepath, numshown, numclicked) {
@@ -22,5 +22,5 @@ var pics = ['./images/bag.jpg', './images/bananas.jpg', './images/bathroom.jpg',
 function randomPic () {
 var randomNumber = Math.floor(Math.random() * 10) + 1;
 var imgName = "img_" + randomNumber;
-document.getElementById("imageid").src= './images/bag.jpg + "/"' + imgName ;
+document.getElementById("first").src= './images/bag.jpg + "/"' + imgName ;
 }
