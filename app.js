@@ -2,7 +2,7 @@
 // better pattern
 
 
-
+lk;
 BusMall.allBusMalls = [];
 
 function BusMall(name, filepath, numshown, numclicked) {
