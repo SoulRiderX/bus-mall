@@ -4,7 +4,7 @@ var ctx = document.getElementById("chart").getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ["bag", "Banana", "bathroom", "boots", "breakfast", "bubblegum", "chair", "cthulhu", "dog-duck", "dragon", "pen", "pet-sweep", "scissors", "shark", "sweep", "tauntaun", "unicorn", "usb", "water-can", "wine"],
+        labels: ["bag", "banana", "bathroom", "boots", "breakfast", "bubblegum", "chair", "cthulhu", "dog-duck", "dragon", "pen", "pet-sweep", "scissors", "shark", "sweep", "tauntaun", "unicorn", "usb", "water-can", "wine"],
         datasets: [{
             label: '# of Clicks',
             data: [12, 19, 3, 5, 2, 3],
@@ -24,6 +24,7 @@ var myChart = new Chart(ctx, {
                 'rgba(153, 102, 255, 1)',
                 'rgba(255, 159, 64, 1)'
             ],
+
             borderWidth: 1
         }]
     },
@@ -33,7 +34,8 @@ var myChart = new Chart(ctx, {
                 ticks: {
                     beginAtZero:true
                 }
-            }]
+}
+            ]
         }
     }
 });
