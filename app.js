@@ -11,7 +11,7 @@ function Picture(name, ext) {
   this.name = name;
   this.filepath = 'images/' + name + ext;
   this.numshown = 0;
-  this.numclicked = 0;
+  this.numClicked = 0;
   allPictures.push(this);
 }
 
@@ -74,13 +74,28 @@ function randomPic () { // from MDN
 function populate() {
   randomPic();
   first.src = allPictures[firstRandom].filepath;
+  first.alt = allPictures[firstRandom].name;
+  second.alt = allPictures[secondRandom].name;
+  third.alt = allPictures[thirdRandom].name;
   second.src = allPictures[secondRandom].filepath;
   third.src = allPictures[thirdRandom].filepath;
 }
 
 function HandleClick(e) {
-  console.log(e);
-  populate();
+  e.preventDefault();
+  console.log(e.target);
+
+  if (e.target.id === 'container') {
+    console.log('click one of the images')
+  } else {
+    populate();
+    for (var i = 0; i < allPictures.length; i++) {
+      if (e.target.alt === allPictures[i].name) {
+        allPictures[i].numClicked += 1;
+        console.log(allPictures);
+      }
+    }
+  }
 }
 populate();
 container.addEventListener('click', HandleClick);
