@@ -7,10 +7,10 @@ var oldThirdRandom = 0;
 var firstRandom = 0;
 var secondRandom = 0;
 var thirdRandom = 0;
+var clickCounter = 0;
 function Picture(name, ext) {
   this.name = name;
   this.filepath = 'images/' + name + ext;
-  this.numshown = 0;
   this.numClicked = 0;
   allPictures.push(this);
 }
@@ -82,7 +82,6 @@ function populate() {
 }
 
 function HandleClick(e) {
-  e.preventDefault();
   console.log(e.target);
 
   if (e.target.id === 'container') {
@@ -96,6 +95,20 @@ function HandleClick(e) {
       }
     }
   }
+  clickCounter++;
+  if (clickCounter === 24)
+  console.log('Out of guesses');
+  return;
 }
 populate();
 container.addEventListener('click', HandleClick);
+
+function maxClicks () { // from codingforums.com
+  var clickLimit = 25;
+  if(clickCounter>=clickLimit) {
+    alert('You can only return false');
+  } else {
+    clickCounter++;
+    return true;
+  }
+}

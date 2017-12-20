@@ -1,12 +1,12 @@
 'use strict';
 
-var ctx = document.getElementById("myChart").getContext('2d');
+var ctx = document.getElementById("chart").getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: ["bag", "Banana", "bathroom", "boots", "breakfast", "bubblegum", "chair", "cthulhu", "dog-duck", "dragon", "pen", "pet-sweep", "scissors", "shark", "sweep", "tauntaun", "unicorn", "usb", "water-can", "wine"],
         datasets: [{
-            label: '# of Votes',
+            label: '# of Clicks',
             data: [12, 19, 3, 5, 2, 3],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
