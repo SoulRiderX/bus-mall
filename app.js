@@ -1,5 +1,6 @@
 'use strict';
 
+var chartData = [];
 var allPictures = [];
 var oldFirstRandom = 0;
 var oldSecondRandom = 0;
@@ -83,7 +84,6 @@ function populate() {
 
 function HandleClick(e) {
   console.log(e.target);
-
   if (e.target.id === 'container') {
     console.log('click one of the images')
   } else {
@@ -96,9 +96,13 @@ function HandleClick(e) {
     }
   }
   clickCounter++;
-  if (clickCounter === 24)
-  console.log('Out of guesses');
-  return;
+  if (clickCounter === 24) {
+    var el = document.getElementById('container');
+    el.innerHTML = '';
+    console.log('Out of guesses');
+    return;
+  }
+
 }
 populate();
 container.addEventListener('click', HandleClick);
@@ -111,4 +115,11 @@ function maxClicks () { // from codingforums.com
     clickCounter++;
     return true;
   }
+}
+
+function populateChartData() {
+  for (var i = 0; i < allPictures.length; i++) {
+    var click = allPictures[i].numClicked;
+  }
+
 }
