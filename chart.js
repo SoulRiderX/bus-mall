@@ -1,13 +1,13 @@
 'use strict';
-
+// from chartjs.org
 var ctx = document.getElementById("chart").getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ["bag", "Banana", "bathroom", "boots", "breakfast", "bubblegum", "chair", "cthulhu", "dog-duck", "dragon", "pen", "pet-sweep", "scissors", "shark", "sweep", "tauntaun", "unicorn", "usb", "water-can", "wine"],
+        labels: ["bag", "banana", "bathroom", "boots", "breakfast", "bubblegum", "chair", "cthulhu", "dog-duck", "dragon", "pen", "pet-sweep", "scissors", "shark", "sweep", "tauntaun", "unicorn", "usb", "water-can", "wine"],
         datasets: [{
             label: '# of Clicks',
-            data: [12, 19, 3, 5, 2, 3],
+            data: chartData,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -33,7 +33,8 @@ var myChart = new Chart(ctx, {
                 ticks: {
                     beginAtZero:true
                 }
-            }]
+}
+            ]
         }
     }
 });
