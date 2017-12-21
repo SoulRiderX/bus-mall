@@ -9,6 +9,13 @@ var firstRandom = 0;
 var secondRandom = 0;
 var thirdRandom = 0;
 var clickCounter = 0;
+
+if (localStorage.pictures) {
+  var pictures = JSON.parse(localStorage.pictures);
+} else {
+  localStorage.pictures = JSON.stringify(allPictures);
+}
+
 function Picture(name, ext) {
   this.name = name;
   this.filepath = 'images/' + name + ext;
@@ -36,6 +43,8 @@ new Picture('unicorn', '.jpg');
 new Picture('usb', '.gif');
 new Picture('water-can', '.jpg');
 new Picture('wine', '.jpg');
+
+
 
 var pics = ['images/bag.jpg', 'images/bananas.jpg', 'images/bathroom.jpg', 'images/boots.jpg', 'images/breakfast.jpg', 'images/bubblegum.jpg', 'images/chair.jpg', 'images/cthulhu.jpg', 'images/dog-duck.jpg', 'images/dragon.jpg', 'images/pen.jpg', 'images/pet-sweep.jpg', 'images/scissors.jpg', 'images/shark.jpg', 'images/sweep.png', 'images/tauntaun.jpg', 'images/unicorn.jpg', 'images/usb.gif', 'images/water-can.jpg', 'images/wine.jpg'];
 
