@@ -1,7 +1,9 @@
 'use strict';
 // from chartjs.org
+var chartData = [];
 var ctx = document.getElementById("chart").getContext('2d');
-var myChart = new Chart(ctx, {
+function myChart() {
+  return new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ["bag", "banana", "bathroom", "boots", "breakfast", "bubblegum", "chair", "cthulhu", "dog-duck", "dragon", "pen", "pet-sweep", "scissors", "shark", "sweep", "tauntaun", "unicorn", "usb", "water-can", "wine"],
@@ -38,3 +40,4 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+}
