@@ -117,18 +117,6 @@ function HandleClick(e) {
 populate();
 container.addEventListener('click', HandleClick);
 
-// function maxClicks () { // from codingforums.com
-//   var clickLimit = 25;
-//   if(clickCounter>=clickLimit) {
-//     alert('You can only return false');
-//     populateChartData();
-//     myChart();
-//   } else {
-//     clickCounter++;
-//     return true;
-//   }
-// }
-
 function populateChartData() {
   for (var i = 0; i < allPictures.length; i++) {
     var click = allPictures[i].numClicked;
