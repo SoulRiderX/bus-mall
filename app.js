@@ -1,6 +1,5 @@
 'use strict';
 
-var chartData = [];
 var allPictures = [];
 var oldFirstRandom = 0;
 var oldSecondRandom = 0;
@@ -108,6 +107,8 @@ function HandleClick(e) {
   if (clickCounter === 24) {
     var el = document.getElementById('container');
     el.innerHTML = '';
+    populateChartData();
+    myChart();
     console.log('Out of guesses');
     return;
   }
@@ -116,19 +117,10 @@ function HandleClick(e) {
 populate();
 container.addEventListener('click', HandleClick);
 
-function maxClicks () { // from codingforums.com
-  var clickLimit = 25;
-  if(clickCounter>=clickLimit) {
-    alert('You can only return false');
-  } else {
-    clickCounter++;
-    return true;
-  }
-}
-
 function populateChartData() {
   for (var i = 0; i < allPictures.length; i++) {
     var click = allPictures[i].numClicked;
+    chartData.push(click);
   }
-
+console.log('chart data', chartData);
 }
